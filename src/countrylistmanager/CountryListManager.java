@@ -137,23 +137,6 @@ public class CountryListManager {
                         newList.add(country);
                     }
                 }
-                break;
-            case "North America":
-                newList = new ArrayList<>();
-                for (AbstractCountry country : countryList) {
-                    if (country instanceof NorthAmericaCountry) {
-                        newList.add(country);
-                    }
-                }
-                break;
-            case "South America":
-                newList = new ArrayList<>();
-                for (AbstractCountry country : countryList) {
-                    if (country instanceof SouthAmericaCountry) {
-                        newList.add(country);
-                    }
-                }
-                break;
             case "Africa":
                 newList = new ArrayList<>();
                 for (AbstractCountry country : countryList) {
@@ -161,7 +144,6 @@ public class CountryListManager {
                         newList.add(country);
                     }
                 }
-                break;
             case "Europe":
                 newList = new ArrayList<>();
                 for (AbstractCountry country : countryList) {
@@ -169,11 +151,24 @@ public class CountryListManager {
                         newList.add(country);
                     }
                 }
-                break;
             case "Oceania":
                 newList = new ArrayList<>();
                 for (AbstractCountry country : countryList) {
                     if (country instanceof OceaniaCountry) {
+                        newList.add(country);
+                    }
+                }
+            case "North America":
+                newList = new ArrayList<>();
+                for (AbstractCountry country : countryList) {
+                    if (country instanceof NorthAmericaCountry) {
+                        newList.add(country);
+                    }
+                }
+            case "South America":
+                newList = new ArrayList<>();
+                for (AbstractCountry country : countryList) {
+                    if (country instanceof SouthAmericaCountry) {
                         newList.add(country);
                     }
                 }
@@ -183,8 +178,8 @@ public class CountryListManager {
 
     public List<AbstractCountry> filterCountriesMostPopulous(int howMany) {
         /* TODO */
-        List<AbstractCountry> list = sortPopulationDecreasing();
-        return list.subList(0, Math.min(howMany, list.size()));
+        List<AbstractCountry> newList = sortAreaDecreasing();
+        return newList.subList(0, Math.min(howMany, newList.size()));
     }
 
     public List<AbstractCountry> filterCountriesLeastPopulous(int howMany) {

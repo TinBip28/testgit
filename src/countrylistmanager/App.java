@@ -37,7 +37,7 @@ public class App {
                 /* TODO
                  * Từ dữ liệu nhận được, tạo các đối tượng Country và đưa vào CountryListManager để quản lý.
                  */
-                CountryListManager.getInstance().append(CountryFactory.getInstance().createCountry(dataList.get(5), newCountryData));
+                CountryListManager.getInstance().append(CountryFactory.getInstance().createCountry(dataList.get(5),newCountryData));
             }
         } catch (IOException e) {
             e.printStackTrace();
